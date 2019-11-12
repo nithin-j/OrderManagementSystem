@@ -19,7 +19,7 @@ namespace OrderManagementSystem.GUI
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
             Employee employee = new Employee();
 
@@ -27,6 +27,7 @@ namespace OrderManagementSystem.GUI
             employee.LastName = txtLastName.Text;
             employee.Email = txtEmail.Text;
             employee.Phone = txtPhone.Text;
+            employee.AddEmployee(employee);
         }
     }
 }

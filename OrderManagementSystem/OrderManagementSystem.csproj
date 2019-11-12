@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business\Employee.cs" />
+    <Compile Include="Business\RandomNumberGenerator.cs" />
     <Compile Include="DataLink\Connection.cs" />
     <Compile Include="DataLink\EmployeeDB.cs" />
     <Compile Include="GUI\ManageUser.cs">

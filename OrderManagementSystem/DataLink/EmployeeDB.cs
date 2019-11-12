@@ -20,7 +20,7 @@ namespace OrderManagementSystem.DataLink
             sqlcmd.CommandText = "INSERT INTO Employees(EmployeeID,FirstName,LastName,Email,Phone)" +
                                 " VALUES (@EmployeeId,@FirstName,@LastName,@Email, @Phone)";
 
-            sqlcmd.Parameters.AddWithValue("@EmployeeId", employee.EmployeeID);
+            sqlcmd.Parameters.AddWithValue("@EmployeeId", RandomNumberGenerator.GenerateRandomString(5));
             sqlcmd.Parameters.AddWithValue("@FirstName", employee.FirstName);
             sqlcmd.Parameters.AddWithValue("@LastName", employee.LastName);
             sqlcmd.Parameters.AddWithValue("@Email", employee.Email);
