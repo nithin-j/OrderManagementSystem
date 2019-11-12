@@ -18,3 +18,4 @@ E:\3rd_Sem\MultiTierApplication_Development\OrderManagementSystem\OrderManagemen
 E:\3rd_Sem\MultiTierApplication_Development\OrderManagementSystem\OrderManagementSystem\obj\Debug\OrderManagementSystem.csproj.CoreCompileInputs.cache
 E:\3rd_Sem\MultiTierApplication_Development\OrderManagementSystem\OrderManagementSystem\obj\Debug\OrderManagementSystem.exe
 E:\3rd_Sem\MultiTierApplication_Development\OrderManagementSystem\OrderManagementSystem\obj\Debug\OrderManagementSystem.pdb
+E:\3rd_Sem\MultiTierApplication_Development\OrderManagementSystem\OrderManagementSystem\obj\Debug\OrderManagementSystem.GUI.Login.resources

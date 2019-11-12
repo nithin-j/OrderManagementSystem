@@ -49,18 +49,29 @@
   <ItemGroup>
     <Compile Include="Business\Employee.cs" />
     <Compile Include="Business\RandomNumberGenerator.cs" />
+    <Compile Include="Business\User.cs" />
     <Compile Include="DataLink\Connection.cs" />
     <Compile Include="DataLink\EmployeeDB.cs" />
+    <Compile Include="DataLink\UserDB.cs" />
     <Compile Include="GUI\ManageUser.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\ManageUser.Designer.cs">
       <DependentUpon>ManageUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\UserLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\UserLogin.Designer.cs">
+      <DependentUpon>UserLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\ManageUser.resx">
       <DependentUpon>ManageUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserLogin.resx">
+      <DependentUpon>UserLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

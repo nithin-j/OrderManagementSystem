@@ -29,5 +29,13 @@ namespace OrderManagementSystem.GUI
             employee.Phone = txtPhone.Text;
             employee.AddEmployee(employee);
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+            Login userLogin = new Login();
+            userLogin.Show();
+        }
     }
 }

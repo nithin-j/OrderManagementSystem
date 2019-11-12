@@ -311,8 +311,9 @@
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(133, 49);
             this.btnExit.TabIndex = 22;
-            this.btnExit.Text = "Exit";
+            this.btnExit.Text = "Logout";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnReset
             // 
@@ -346,8 +347,10 @@
             this.Controls.Add(this.txtFirstName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.DataBindings.Add(new System.Windows.Forms.Binding("WindowState", global::OrderManagementSystem.Properties.Settings.Default, "FormStartUp", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.Name = "ManageUser";
             this.Text = "Manage Employee";
+            this.WindowState = global::OrderManagementSystem.Properties.Settings.Default.FormStartUp;
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
