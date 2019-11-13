@@ -31,10 +31,7 @@ namespace OrderManagementSystem.GUI
 
             if (isValid)
             {
-                this.Hide();
-                ManageUser manageUser = new ManageUser();
-                manageUser.Show();
-                
+                LoadForm(user);
             }
             else
             {
@@ -45,6 +42,27 @@ namespace OrderManagementSystem.GUI
         private void button1_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void LoadForm(User user)
+        {
+            int UserTypeID = user.GetUserType(user);
+            switch (UserTypeID)
+            {
+                case 1:
+                    MessageBox.Show("Normal user dont have any forms");
+                    break;
+                case 2:
+                    this.Hide();
+                    ManageUser manageUser = new ManageUser();
+                    manageUser.Show();
+                    break;
+                case 3:
+                    MessageBox.Show("Under Construction");
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }
