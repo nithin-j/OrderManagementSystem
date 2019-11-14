@@ -47,12 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Business\Employee.cs" />
-    <Compile Include="Business\RandomNumberGenerator.cs" />
-    <Compile Include="Business\User.cs" />
-    <Compile Include="DataLink\Connection.cs" />
-    <Compile Include="DataLink\EmployeeDB.cs" />
-    <Compile Include="DataLink\UserDB.cs" />
     <Compile Include="GUI\ManageUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,7 +61,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Validation\Validator.cs" />
     <EmbeddedResource Include="GUI\ManageUser.resx">
       <DependentUpon>ManageUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -96,6 +89,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\HiTech\HiTech.csproj">
+      <Project>{c6e57608-af78-414a-a3ed-f4fc16ca514a}</Project>
+      <Name>HiTech</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

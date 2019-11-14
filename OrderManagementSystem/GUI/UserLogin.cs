@@ -8,7 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using OrderManagementSystem.Business;
+using HiTech.Business;
+using HiTech.Validation;
 
 namespace OrderManagementSystem.GUI
 {
@@ -21,6 +22,22 @@ namespace OrderManagementSystem.GUI
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            string input = txtUSerID.Text;
+            if (!Validator.IsValidID(input))
+            {
+                txtUSerID.Clear();
+                txtPassword.Clear();
+                txtUSerID.Focus();
+                return;
+            }
+
+            input = txtPassword.Text;
+            if (!Validator.IsValidPassword(input))
+            {
+                txtPassword.Clear();
+                txtPassword.Focus();
+                return;
+            }
             User user = new User();
             bool isValid;
 

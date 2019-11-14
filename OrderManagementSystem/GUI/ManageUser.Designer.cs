@@ -104,7 +104,7 @@
             this.grpManageUser.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpManageUser.Location = new System.Drawing.Point(1077, 196);
             this.grpManageUser.Name = "grpManageUser";
-            this.grpManageUser.Size = new System.Drawing.Size(849, 245);
+            this.grpManageUser.Size = new System.Drawing.Size(668, 245);
             this.grpManageUser.TabIndex = 6;
             this.grpManageUser.TabStop = false;
             this.grpManageUser.Text = "Manage User";

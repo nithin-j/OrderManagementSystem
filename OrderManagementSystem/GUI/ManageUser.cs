@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using OrderManagementSystem.Validation;
 
-using OrderManagementSystem.Business;
+using HiTech.Business;
+using HiTech.Validation;
 
 namespace OrderManagementSystem.GUI
 {
@@ -211,7 +211,36 @@ namespace OrderManagementSystem.GUI
         {
             Employee employee = new Employee();
 
-            //validation pending
+            string input = txtFirstName.Text;
+            if (!Validator.IsValidName(input, 0))
+            {
+                txtFirstName.Clear();
+                txtFirstName.Focus();
+                return;
+            }
+            input = txtLastName.Text;
+            if (!Validator.IsValidName(input, 1))
+            {
+                txtLastName.Clear();
+                txtLastName.Focus();
+                return;
+            }
+            input = txtEmail.Text;
+            if (!Validator.IsValidEmail(input))
+            {
+                txtEmail.Clear();
+                txtEmail.Focus();
+                return;
+            }
+            input = txtPhone.Text;
+            if (!Validator.isValidPhone(input))
+            {
+                txtPhone.Clear();
+                txtPhone.Focus();
+                return;
+            }
+
+
 
             employee.EmployeeID = txtEmployeeID.Text;
             employee.FirstName = txtFirstName.Text;
@@ -219,14 +248,31 @@ namespace OrderManagementSystem.GUI
             employee.Email = txtEmail.Text;
             employee.Phone = txtPhone.Text;
             employee.UpdateEmployees(employee);
+
+            MessageBox.Show("Employee details updated in the system", "Update Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
             string empID = txtEmployeeID.Text;
 
+            if (!Validator.CheckIfUserIDExists(empID))
+            {
+                
+                MessageBox.Show($"User ID already exists for the employee: {txtEmployeeID.Text}. \n" +
+                    $"Please try removing the user ID and try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                btnDelete.Enabled = false;
+                txtSearchInput.Clear();
+                txtSearchInput.Focus();
+                return;
+            }
+
+            
             Employee employee = new Employee();
             employee.DeleteEmployees(empID);
+
+            MessageBox.Show("Employee details are removed from the system", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnRemoveUser_Click(object sender, EventArgs e)

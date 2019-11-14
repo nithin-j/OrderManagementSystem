@@ -1,0 +1,6 @@
+E:\3rd_Sem\MultiTierApplication_Development\OrderManagementSystem\HiTech\obj\Debug\HiTech.csprojAssemblyReference.cache
+E:\3rd_Sem\MultiTierApplication_Development\OrderManagementSystem\HiTech\obj\Debug\HiTech.csproj.CoreCompileInputs.cache
+E:\3rd_Sem\MultiTierApplication_Development\OrderManagementSystem\HiTech\bin\Debug\HiTech.dll
+E:\3rd_Sem\MultiTierApplication_Development\OrderManagementSystem\HiTech\bin\Debug\HiTech.pdb
+E:\3rd_Sem\MultiTierApplication_Development\OrderManagementSystem\HiTech\obj\Debug\HiTech.dll
+E:\3rd_Sem\MultiTierApplication_Development\OrderManagementSystem\HiTech\obj\Debug\HiTech.pdb
