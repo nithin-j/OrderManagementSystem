@@ -40,5 +40,15 @@ namespace OrderManagementSystem.Business
             return UserDB.GenerateAndSaveUserNamePassword(user);
         }
 
+        public User SearchUser(string userInput)
+        {
+            return UserDB.SearchRecords(userInput);
+        }
+
+        public void RemoveUser(String userId)
+        {
+            UserDB.RemoveRecords(userId);
+        }
+
     }
 }

@@ -85,8 +85,9 @@ namespace OrderManagementSystem.DataLink
             List<User> userdetails = new List<User>();
             sqlcmd.Connection = sqlconn;
             sqlcmd.CommandText = "EXEC GenerateAndSaveUserIDandPassword @UserType = @User_Type, @UserID = @User_ID, " +
-                "@EmployeeID = 'KP3S0', @Password = @Pword";
+                "@EmployeeID = @Employee_ID, @Password = @Pword";
             sqlcmd.Parameters.AddWithValue("@User_Type",user.UserTypeId);
+            sqlcmd.Parameters.AddWithValue("Employee_ID", user.EmployeeID);
             sqlcmd.Parameters.AddWithValue("@User_ID",RandomNumberGenerator.GenerateRandomString(5));
             sqlcmd.Parameters.AddWithValue("@Pword",RandomNumberGenerator.GenerateRandomString(15));
             User usr = new User();
@@ -105,6 +106,42 @@ namespace OrderManagementSystem.DataLink
 
             return usr;
 
+        }
+
+        public static User SearchRecords(string userInput)
+        {
+            User user = new User();
+            SqlConnection sqlconn = Connection.SqlConnection();
+            SqlCommand sqlcomm = new SqlCommand($"SELECT * from Users WHERE UserID = '{userInput}'",sqlconn);
+            SqlDataReader reader = sqlcomm.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    user.UserID = reader.GetString(reader.GetOrdinal("UserID"));
+                    user.UserTypeId = Convert.ToInt32(reader["UserTypeId"]);
+                    user.Password = "************";
+                }
+            }
+            else
+                user = null;
+            sqlconn.Close();
+
+            return user;
+
+        }
+
+        public static void RemoveRecords(string userId)
+        {
+            SqlConnection sqlconn = Connection.SqlConnection();
+            SqlCommand sqlcomm = new SqlCommand();
+            sqlcomm.Connection = sqlconn;
+            sqlcomm.CommandText = "EXEC RemoveUserIDPassword @UserID = @User_Id";
+            sqlcomm.Parameters.AddWithValue("@User_Id", userId);
+            sqlcomm.ExecuteNonQuery();
+
+            sqlconn.Close();
         }
     }
 }
