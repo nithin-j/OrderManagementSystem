@@ -80,6 +80,7 @@ namespace OrderManagementSystem.DataLink
 
         public static User GenerateAndSaveUserNamePassword(User user)
         {
+            
             SqlConnection sqlconn = Connection.SqlConnection();
             SqlCommand sqlcmd = new SqlCommand();
             List<User> userdetails = new List<User>();

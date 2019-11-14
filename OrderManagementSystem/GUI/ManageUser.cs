@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using OrderManagementSystem.Validation;
 
 using OrderManagementSystem.Business;
 
@@ -32,20 +33,68 @@ namespace OrderManagementSystem.GUI
         private void btnAdd_Click(object sender, EventArgs e)
         {
             Employee employee = new Employee();
+            string input;
+
+            input = txtFirstName.Text;
+            if (!Validator.IsValidName(input, 0))
+            {
+                txtFirstName.Clear();
+                txtFirstName.Focus();
+                return;
+            }
+            input = txtLastName.Text;
+            if (!Validator.IsValidName(input, 1))
+            {
+                txtLastName.Clear();
+                txtLastName.Focus();
+                return;
+            }
+            input = txtEmail.Text;
+            if (!Validator.IsValidEmail(input))
+            {
+                txtEmail.Clear();
+                txtEmail.Focus();
+                return;
+            }
+            input = txtPhone.Text;
+            if (!Validator.isValidPhone(input))
+            {
+                txtPhone.Clear();
+                txtPhone.Focus();
+                return;
+            }
 
             employee.FirstName = txtFirstName.Text;
             employee.LastName = txtLastName.Text;
             employee.Email = txtEmail.Text;
             employee.Phone = txtPhone.Text;
             employee.AddEmployee(employee);
+
+            foreach (Control ctr in grpManageEmployees.Controls)
+            {
+                if (ctr is TextBox)
+                {
+                    ctr.Text = "";
+                }
+
+                else if (ctr is ComboBox)
+                {
+                    ((ComboBox)ctr).SelectedIndex = 0;
+                }
+            }
+            MessageBox.Show("New employee added to system", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            int ch = Convert.ToInt32(MessageBox.Show("Do you want to Logout?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question));
+            if (ch == 6)
+            {
+                this.Close();
 
-            Login userLogin = new Login();
-            userLogin.Show();
+                Login userLogin = new Login();
+                userLogin.Show();
+            }
         }
 
         private void cmbRole_Click(object sender, EventArgs e)
@@ -55,6 +104,17 @@ namespace OrderManagementSystem.GUI
 
         private void btnGenerate_Click(object sender, EventArgs e)
         {
+            string input = txtEmployeeID.Text;
+            if (!Validator.CheckIfUserIDExists(input))
+            {
+                btnGenerate.Enabled = false;
+                MessageBox.Show($"User ID already generated for the employee: {txtEmployeeID.Text}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+                txtSearchInput.Clear();
+                txtSearchInput.Focus();
+                return;
+            }
             if (cmbRole.SelectedIndex != 0)
             {
                 User user = new User();
@@ -184,6 +244,14 @@ namespace OrderManagementSystem.GUI
             User user = new User();
             user = user.SearchUser(userInput);
 
+            if (txtSearchUser.Text == "")
+            {
+                MessageBox.Show("Please enter the UserID you want to search.\n " +
+                    "you can find the userID using the \"List All\" option","Empty",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                txtSearchUser.Focus();
+                return;
+            }
+
             if (user != null)
             {
                 cmbRole.SelectedIndex = user.UserTypeId - 1;
@@ -193,6 +261,13 @@ namespace OrderManagementSystem.GUI
                 grpManageUser.Enabled = true;
                 btnRemoveUser.Enabled = true;
                 btnGenerate.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("The User ID you are looking foe is not present in the system. " +
+                    "pleae make sure you enter the correct user ID", "Invalid User ID", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtSearchUser.Focus();
+                return;
             }
         }
 
@@ -215,6 +290,26 @@ namespace OrderManagementSystem.GUI
             {
                 cmbRole.Items.Add(UserType);
             }
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            txtEmployeeID.Clear();
+            txtFirstName.Clear();
+            txtLastName.Clear();
+            txtEmail.Clear();
+            txtPhone.Clear();
+            txtSearchInput.Clear();
+            txtSearchUser.Clear();
+            txtUserid.Clear();
+            txtPassword.Clear();
+            cmbSearchBy.SelectedIndex = 0;
+            lvEmployees.Items.Clear();
+            btnUpdate.Enabled = false;
+            btnDelete.Enabled = false;
+            grpManageUser.Enabled = false;
+            PopulateUserTypes();
+
         }
     }
 }

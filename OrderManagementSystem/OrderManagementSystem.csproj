@@ -67,6 +67,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validation\Validator.cs" />
     <EmbeddedResource Include="GUI\ManageUser.resx">
       <DependentUpon>ManageUser.cs</DependentUpon>
     </EmbeddedResource>

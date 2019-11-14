@@ -31,9 +31,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.grpManageUser = new System.Windows.Forms.GroupBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.btnSearchUser = new System.Windows.Forms.Button();
-            this.txtSearchUser = new System.Windows.Forms.TextBox();
             this.btnRemoveUser = new System.Windows.Forms.Button();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnGenerate = new System.Windows.Forms.Button();
@@ -42,6 +39,9 @@
             this.cmbRole = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.btnSearchUser = new System.Windows.Forms.Button();
+            this.txtSearchUser = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtPhone = new System.Windows.Forms.TextBox();
@@ -67,10 +67,10 @@
             this.txtEmployeeID = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.grpManageEmployees = new System.Windows.Forms.GroupBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.grpManageUser.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.grpManageEmployees.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -109,34 +109,6 @@
             this.grpManageUser.TabStop = false;
             this.grpManageUser.Text = "Manage User";
             this.grpManageUser.EnabledChanged += new System.EventHandler(this.grpManageUser_EnabledChanged);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(1120, 468);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(206, 22);
-            this.label10.TabIndex = 29;
-            this.label10.Text = "Search:   (Enter a valid UserID)";
-            // 
-            // btnSearchUser
-            // 
-            this.btnSearchUser.Location = new System.Drawing.Point(1557, 459);
-            this.btnSearchUser.Name = "btnSearchUser";
-            this.btnSearchUser.Size = new System.Drawing.Size(128, 43);
-            this.btnSearchUser.TabIndex = 17;
-            this.btnSearchUser.Text = "Search";
-            this.btnSearchUser.UseVisualStyleBackColor = true;
-            this.btnSearchUser.Click += new System.EventHandler(this.btnSearchUser_Click);
-            // 
-            // txtSearchUser
-            // 
-            this.txtSearchUser.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchUser.Location = new System.Drawing.Point(1345, 468);
-            this.txtSearchUser.Name = "txtSearchUser";
-            this.txtSearchUser.Size = new System.Drawing.Size(183, 27);
-            this.txtSearchUser.TabIndex = 27;
             // 
             // btnRemoveUser
             // 
@@ -212,6 +184,34 @@
             this.label5.Size = new System.Drawing.Size(47, 22);
             this.label5.TabIndex = 11;
             this.label5.Text = "Role: ";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(1120, 468);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(206, 22);
+            this.label10.TabIndex = 29;
+            this.label10.Text = "Search:   (Enter a valid UserID)";
+            // 
+            // btnSearchUser
+            // 
+            this.btnSearchUser.Location = new System.Drawing.Point(1557, 459);
+            this.btnSearchUser.Name = "btnSearchUser";
+            this.btnSearchUser.Size = new System.Drawing.Size(128, 43);
+            this.btnSearchUser.TabIndex = 17;
+            this.btnSearchUser.Text = "Search";
+            this.btnSearchUser.UseVisualStyleBackColor = true;
+            this.btnSearchUser.Click += new System.EventHandler(this.btnSearchUser_Click);
+            // 
+            // txtSearchUser
+            // 
+            this.txtSearchUser.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchUser.Location = new System.Drawing.Point(1345, 468);
+            this.txtSearchUser.Name = "txtSearchUser";
+            this.txtSearchUser.Size = new System.Drawing.Size(183, 27);
+            this.txtSearchUser.TabIndex = 27;
             // 
             // txtEmail
             // 
@@ -389,6 +389,7 @@
             this.btnReset.TabIndex = 23;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // label1
             // 
@@ -438,31 +439,31 @@
             this.label9.TabIndex = 26;
             this.label9.Text = "Search: ";
             // 
-            // groupBox2
+            // grpManageEmployees
             // 
-            this.groupBox2.Controls.Add(this.btnDelete);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.txtEmployeeID);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.txtFirstName);
-            this.groupBox2.Controls.Add(this.txtLastName);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.txtEmail);
-            this.groupBox2.Controls.Add(this.cmbSearchBy);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.txtSearchInput);
-            this.groupBox2.Controls.Add(this.txtPhone);
-            this.groupBox2.Controls.Add(this.btnSearch);
-            this.groupBox2.Controls.Add(this.btnAdd);
-            this.groupBox2.Controls.Add(this.btnUpdate);
-            this.groupBox2.Location = new System.Drawing.Point(125, 163);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(632, 390);
-            this.groupBox2.TabIndex = 27;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Manage Employee";
+            this.grpManageEmployees.Controls.Add(this.btnDelete);
+            this.grpManageEmployees.Controls.Add(this.label8);
+            this.grpManageEmployees.Controls.Add(this.label9);
+            this.grpManageEmployees.Controls.Add(this.label1);
+            this.grpManageEmployees.Controls.Add(this.txtEmployeeID);
+            this.grpManageEmployees.Controls.Add(this.label2);
+            this.grpManageEmployees.Controls.Add(this.txtFirstName);
+            this.grpManageEmployees.Controls.Add(this.txtLastName);
+            this.grpManageEmployees.Controls.Add(this.label3);
+            this.grpManageEmployees.Controls.Add(this.txtEmail);
+            this.grpManageEmployees.Controls.Add(this.cmbSearchBy);
+            this.grpManageEmployees.Controls.Add(this.label4);
+            this.grpManageEmployees.Controls.Add(this.txtSearchInput);
+            this.grpManageEmployees.Controls.Add(this.txtPhone);
+            this.grpManageEmployees.Controls.Add(this.btnSearch);
+            this.grpManageEmployees.Controls.Add(this.btnAdd);
+            this.grpManageEmployees.Controls.Add(this.btnUpdate);
+            this.grpManageEmployees.Location = new System.Drawing.Point(125, 163);
+            this.grpManageEmployees.Name = "grpManageEmployees";
+            this.grpManageEmployees.Size = new System.Drawing.Size(632, 390);
+            this.grpManageEmployees.TabIndex = 27;
+            this.grpManageEmployees.TabStop = false;
+            this.grpManageEmployees.Text = "Manage Employee";
             // 
             // btnDelete
             // 
@@ -483,7 +484,7 @@
             this.Controls.Add(this.btnSearchUser);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtSearchUser);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.grpManageEmployees);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.lvEmployees);
@@ -496,8 +497,8 @@
             this.Load += new System.EventHandler(this.ManageUser_Load);
             this.grpManageUser.ResumeLayout(false);
             this.grpManageUser.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.grpManageEmployees.ResumeLayout(false);
+            this.grpManageEmployees.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -543,7 +544,7 @@
         private System.Windows.Forms.Button btnSearchUser;
         private System.Windows.Forms.TextBox txtSearchUser;
         private System.Windows.Forms.Button btnRemoveUser;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox grpManageEmployees;
         private System.Windows.Forms.Button btnDelete;
     }
 }
