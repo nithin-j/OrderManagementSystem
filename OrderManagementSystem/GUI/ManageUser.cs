@@ -170,7 +170,7 @@ namespace OrderManagementSystem.GUI
         {
             int userOption = Convert.ToInt16(cmbSearchBy.SelectedIndex);
             string userInput = txtSearchInput.Text;
-            lvEmployees.Enabled = false;
+            lvEmployees.Items.Clear();
             Employee employee = new Employee();
 
             if (userOption != 0)

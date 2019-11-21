@@ -59,19 +59,18 @@ namespace HiTech.Business
         }
 
     }
-
-
+    
     public class User
     {
-        private string userID;
-        private string password;
-        private int userTypeId;
+        private static string userID;
+        private static string password;
+        private static int userTypeId;
         private string employeeID;
 
         public string UserID { get => userID; set => userID = value; }
         public string Password { get => password; set => password = value; }
-        public int UserTypeId { get => userTypeId; set => userTypeId = value; }
         public string EmployeeID { get => employeeID; set => employeeID = value; }
+        public int UserTypeId { get => userTypeId; set => userTypeId = value; }
 
         public bool GetUserDetails(User user)
         {
@@ -105,17 +104,16 @@ namespace HiTech.Business
 
     }
 
-    public static class RandomNumberGenerator
+    public class UserPermissions
     {
-        private static Random random = new Random();
-
-        public static string GenerateRandomString(int length)
+        public List<string> GetUSerPermissions(int userTypeID)
         {
-            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            return new string(Enumerable.Repeat(chars, length).Select(s => s[random.Next(s.Length)]).ToArray());
+            return ManagePermissions.GetUserForms(userTypeID);
         }
     }
+
 }
+
 namespace HiTech.DataLink
 {
     //DB
@@ -250,7 +248,7 @@ namespace HiTech.DataLink
 
     }
 
-    public class UserDB
+    public static class UserDB
     {
         public static bool GetCredentials(User user)
         {
@@ -386,7 +384,43 @@ namespace HiTech.DataLink
             sqlconn.Close();
         }
     }
+
+    public static class RandomNumberGenerator
+    {
+        private static Random random = new Random();
+
+        public static string GenerateRandomString(int length)
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            return new string(Enumerable.Repeat(chars, length).Select(s => s[random.Next(s.Length)]).ToArray());
+        }
+    }
+
+    public static class ManagePermissions
+    {
+
+        public static List<string> GetUserForms(int userTypeID)
+        {
+            List<string> AllowedForms = new List<string>();
+            SqlConnection sqlconn = Connection.SqlConnection();
+            SqlCommand sqlcomm = new SqlCommand();
+            sqlcomm.Connection = sqlconn;
+            sqlcomm.CommandText = "SELECT UserForms FROM UserPermissions WHERE UserTypeID = @UserTypeID";
+            sqlcomm.Parameters.AddWithValue("@UserTypeID", userTypeID);
+            SqlDataReader reader = sqlcomm.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    AllowedForms.Add(reader.GetString(reader.GetOrdinal("UserForms")));
+                }
+            }
+            return AllowedForms;
+        }
+    }
 }
+
 namespace HiTech.Validation
 {
     //Validation

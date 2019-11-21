@@ -60,7 +60,6 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnExit = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
@@ -102,7 +101,7 @@
             this.grpManageUser.Controls.Add(this.label7);
             this.grpManageUser.Controls.Add(this.label5);
             this.grpManageUser.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpManageUser.Location = new System.Drawing.Point(1077, 196);
+            this.grpManageUser.Location = new System.Drawing.Point(1061, 71);
             this.grpManageUser.Name = "grpManageUser";
             this.grpManageUser.Size = new System.Drawing.Size(668, 245);
             this.grpManageUser.TabIndex = 6;
@@ -189,7 +188,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(1120, 468);
+            this.label10.Location = new System.Drawing.Point(1104, 343);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(206, 22);
             this.label10.TabIndex = 29;
@@ -197,7 +196,7 @@
             // 
             // btnSearchUser
             // 
-            this.btnSearchUser.Location = new System.Drawing.Point(1557, 459);
+            this.btnSearchUser.Location = new System.Drawing.Point(1541, 334);
             this.btnSearchUser.Name = "btnSearchUser";
             this.btnSearchUser.Size = new System.Drawing.Size(128, 43);
             this.btnSearchUser.TabIndex = 17;
@@ -208,7 +207,7 @@
             // txtSearchUser
             // 
             this.txtSearchUser.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchUser.Location = new System.Drawing.Point(1345, 468);
+            this.txtSearchUser.Location = new System.Drawing.Point(1329, 343);
             this.txtSearchUser.Name = "txtSearchUser";
             this.txtSearchUser.Size = new System.Drawing.Size(183, 27);
             this.txtSearchUser.TabIndex = 27;
@@ -274,7 +273,7 @@
             // btnList
             // 
             this.btnList.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnList.Location = new System.Drawing.Point(1427, 564);
+            this.btnList.Location = new System.Drawing.Point(1411, 439);
             this.btnList.Name = "btnList";
             this.btnList.Size = new System.Drawing.Size(128, 43);
             this.btnList.TabIndex = 17;
@@ -327,7 +326,7 @@
             this.lvEmployees.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvEmployees.GridLines = true;
             this.lvEmployees.HideSelection = false;
-            this.lvEmployees.Location = new System.Drawing.Point(316, 634);
+            this.lvEmployees.Location = new System.Drawing.Point(300, 509);
             this.lvEmployees.Name = "lvEmployees";
             this.lvEmployees.Size = new System.Drawing.Size(1239, 184);
             this.lvEmployees.TabIndex = 21;
@@ -368,22 +367,10 @@
             // 
             this.columnHeader7.Text = "User ID";
             // 
-            // btnExit
-            // 
-            this.btnExit.AutoEllipsis = true;
-            this.btnExit.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(1737, 910);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(133, 49);
-            this.btnExit.TabIndex = 22;
-            this.btnExit.Text = "Logout";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
             // btnReset
             // 
             this.btnReset.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.Location = new System.Drawing.Point(1542, 910);
+            this.btnReset.Location = new System.Drawing.Point(1699, 807);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(133, 49);
             this.btnReset.TabIndex = 23;
@@ -458,7 +445,7 @@
             this.grpManageEmployees.Controls.Add(this.btnSearch);
             this.grpManageEmployees.Controls.Add(this.btnAdd);
             this.grpManageEmployees.Controls.Add(this.btnUpdate);
-            this.grpManageEmployees.Location = new System.Drawing.Point(125, 163);
+            this.grpManageEmployees.Location = new System.Drawing.Point(109, 38);
             this.grpManageEmployees.Name = "grpManageEmployees";
             this.grpManageEmployees.Size = new System.Drawing.Size(632, 390);
             this.grpManageEmployees.TabIndex = 27;
@@ -486,7 +473,6 @@
             this.Controls.Add(this.txtSearchUser);
             this.Controls.Add(this.grpManageEmployees);
             this.Controls.Add(this.btnReset);
-            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.lvEmployees);
             this.Controls.Add(this.grpManageUser);
             this.Controls.Add(this.btnList);
@@ -532,7 +518,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtFirstName;
