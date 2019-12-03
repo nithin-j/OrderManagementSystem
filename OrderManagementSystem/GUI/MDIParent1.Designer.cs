@@ -37,8 +37,12 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
+            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -66,7 +70,7 @@
             // menuManageEmployee
             // 
             this.menuManageEmployee.Name = "menuManageEmployee";
-            this.menuManageEmployee.Size = new System.Drawing.Size(216, 26);
+            this.menuManageEmployee.Size = new System.Drawing.Size(208, 26);
             this.menuManageEmployee.Text = "Manage Employee";
             this.menuManageEmployee.Visible = false;
             this.menuManageEmployee.Click += new System.EventHandler(this.menuManageEmployee_Click);
@@ -74,14 +78,14 @@
             // menuManageAccount
             // 
             this.menuManageAccount.Name = "menuManageAccount";
-            this.menuManageAccount.Size = new System.Drawing.Size(216, 26);
+            this.menuManageAccount.Size = new System.Drawing.Size(208, 26);
             this.menuManageAccount.Text = "Manage Account";
             this.menuManageAccount.Click += new System.EventHandler(this.menuManageAccount_Click);
             // 
             // menuLogout
             // 
             this.menuLogout.Name = "menuLogout";
-            this.menuLogout.Size = new System.Drawing.Size(216, 26);
+            this.menuLogout.Size = new System.Drawing.Size(208, 26);
             this.menuLogout.Text = "Logout";
             this.menuLogout.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
@@ -103,11 +107,42 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(49, 20);
             this.toolStripStatusLabel.Text = "Status";
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(511, 109);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(256, 100);
+            this.tabControl1.TabIndex = 4;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(248, 71);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(248, 71);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
             // MDIParent1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(843, 558);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);
             this.IsMdiContainer = true;
@@ -121,6 +156,7 @@
             this.menuStrip.PerformLayout();
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -136,6 +172,9 @@
         private System.Windows.Forms.ToolStripMenuItem menuManageEmployee;
         private System.Windows.Forms.ToolStripMenuItem menuManageAccount;
         private System.Windows.Forms.ToolStripMenuItem menuLogout;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
     }
 }
 

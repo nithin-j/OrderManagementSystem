@@ -77,5 +77,7 @@ namespace OrderManagementSystem.GUI
             account.Show();
             account.MdiParent = this;
         }
+
+        
     }
 }
